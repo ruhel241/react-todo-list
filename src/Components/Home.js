@@ -57,6 +57,8 @@ class Home extends Component {
     clearItems = () => {
         this.setState({
             items: []
+        },() => {
+            localStorage.setItem('react-todo-list-data', JSON.stringify(this.state.items))
         })
     }
     
@@ -75,6 +77,8 @@ class Home extends Component {
       const filterItem = this.state.items.filter(item => item.id !== id);
       this.setState({
         items: filterItem,
+      },() => {
+        localStorage.setItem('react-todo-list-data', JSON.stringify(this.state.items));
       })
     }
    
@@ -91,7 +95,7 @@ class Home extends Component {
                         changeHaldler={this.changeHaldler}
                         handleSubmit={this.handleSubmit}
                     />
-                    <ToDoList 
+                    <ToDoList
                         classes={classes} 
                         items={this.state.items}
                         clearItems={this.clearItems}

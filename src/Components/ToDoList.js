@@ -24,48 +24,52 @@ class ToDoList extends Component {
        
         return (
             <React.Fragment>
-                <h1 className={classes.title}> Todo List </h1>
-                <Card className={classes.todoForm} style={{padding: '50px'}}> 
-                    <TableContainer component={Paper}>
-                        <Table className="" aria-label="simple table">
-                            <TableBody>
-                                {items.reverse().map((item) => (
-                                    <TableRow key={item.id}>
-                                        <TableCell component="th" scope="row">
-                                            {item.title}
-                                        </TableCell>
-                                        
-                                        <TableCell align="right">
-                                            <IconButton 
-                                                style={{color: green[500]}} 
-                                                aria-label="edit"
-                                                onClick={()=> handlerEditItem(item.id)}
-                                            >
-                                                <EditIcon/>
-                                            </IconButton>
-                                            <IconButton 
-                                                color="secondary" 
-                                                aria-label="delete"
-                                                onClick={() => handleDeleteItem(item.id)}
-                                            >
-                                                <DeleteIcon/>
-                                            </IconButton>
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-
-                    <Button 
-                        onClick={clearItems} 
-                        variant="contained" 
-                        color="secondary" 
-                        style={{width:"66%", marginTop:"30px"}}
-                    >
-                        CLEAR LIST
-                    </Button>
-                </Card>
+                { items.length > 0 && (
+                    <div>
+                        <h1 className={classes.title}> Todo List </h1>
+                        <Card className={classes.todoForm} style={{padding: '50px'}}> 
+                            <TableContainer component={Paper}>
+                                <Table className="" aria-label="simple table">
+                                    <TableBody>
+                                        {items.reverse().map((item) => (
+                                            <TableRow key={item.id}>
+                                                <TableCell component="th" scope="row">
+                                                    {item.title}
+                                                </TableCell>
+                                                
+                                                <TableCell align="right">
+                                                    <IconButton 
+                                                        style={{color: green[500]}} 
+                                                        aria-label="edit"
+                                                        onClick={()=> handlerEditItem(item.id)}
+                                                    >
+                                                        <EditIcon/>
+                                                    </IconButton>
+                                                    <IconButton 
+                                                        color="secondary" 
+                                                        aria-label="delete"
+                                                        onClick={() => handleDeleteItem(item.id)}
+                                                    >
+                                                        <DeleteIcon/>
+                                                    </IconButton>
+                                                </TableCell>
+                                            </TableRow>
+                                        ))}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                    
+                            <Button 
+                                onClick={clearItems} 
+                                variant="contained" 
+                                color="secondary" 
+                                style={{width:"66%", marginTop:"30px"}}
+                            >
+                                CLEAR LIST
+                            </Button>
+                        </Card>
+                    </div>
+                )}
             </React.Fragment>
         )
     }

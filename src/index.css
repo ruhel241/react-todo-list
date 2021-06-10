@@ -46,4 +46,7 @@ code {
   .input-btn {
     width: 100%;
   }
+  .MuiPaper-root {
+    padding: 20px !important;
+  }
 }
