@@ -35,9 +35,6 @@ class ToDoInput extends Component {
                             className="input-btn"
                             disabled={!item ? true : false}
                             style={{
-                                width:"66%", 
-                                marginTop:"30px",
-                                color: "#ffff",
                                 backgroundColor: !editItem ? lightBlue[700] : green[500]
                             }}
                             >
