@@ -13,6 +13,18 @@ code {
     monospace;
 }
 
+
+.title-field {
+  width: 66%;
+}
+
+/* .input-btn {
+  width: 66%;
+  margin-top: 30px;
+  color: #ffff;
+} */
+
+
 @media only screen and (max-width: 800px) {
   .MuiContainer-root{
     width: 80% !important;

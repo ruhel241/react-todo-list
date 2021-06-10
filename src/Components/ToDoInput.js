@@ -25,13 +25,14 @@ class ToDoInput extends Component {
                             id="outlined-basic" 
                             label="Outlined" 
                             variant="outlined"
-                            style={{width:"66%"}}
+                            className="title-field"
                             value={item}
                             onChange={changeHaldler}
                         />
                         <Button 
                             type="submit" 
-                            variant="contained" 
+                            variant="contained"
+                            className="input-btn"
                             disabled={!item ? true : false}
                             style={{
                                 width:"66%", 

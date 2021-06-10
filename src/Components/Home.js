@@ -23,6 +23,13 @@ class Home extends Component {
         id: uuidv4(),
         editItem: false
     };
+
+    componentDidMount() {
+        const getItems = JSON.parse(localStorage.getItem('react-todo-list-data')) || [];
+        this.setState({
+            items: getItems
+        })
+    }
     
     changeHaldler = (e) => {
         this.setState({
@@ -42,6 +49,8 @@ class Home extends Component {
             item: '',
             id: uuidv4(),
             editItem: false
+        }, () => {
+            localStorage.setItem('react-todo-list-data', JSON.stringify(this.state.items));
         })
     }
 
