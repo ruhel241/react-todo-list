@@ -31,7 +31,7 @@ class ToDoList extends Component {
                             <TableContainer component={Paper}>
                                 <Table className="" aria-label="simple table">
                                     <TableBody>
-                                        {items.reverse().map((item) => (
+                                        {items.slice(0).reverse().map((item) => (
                                             <TableRow key={item.id}>
                                                 <TableCell component="th" scope="row">
                                                     {item.title}
