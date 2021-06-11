@@ -47,6 +47,9 @@ code {
     width: 100%;
   }
   .MuiPaper-root {
-    padding: 20px !important;
+    padding: 10px !important;
+  }
+  .MuiTableContainer-root {
+    width: 95% !important;
   }
 }
